@@ -3,3 +3,9 @@
   vertical-align: top;
   border: 1px solid salmon;
 }
+
+.moots {
+  background-color: transparent;
+  border: none;
+  font-size: 100px;
+}
