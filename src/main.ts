@@ -4,9 +4,9 @@ let counter: number = 0; // click counter
 let lastTime: number = 0; // used for auto-click calculation
 let autoClicks: number = 0; // 0 autoclicks to start
 
-const costA: number = 10; // cost to upgrade autoclicker a
-const costB: number = 100; // cost to upgrade autoclicker b
-const costC: number = 1000; // cost to upgrade autoclicker c
+let costA: number = 10; // cost to upgrade autoclicker a
+let costB: number = 100; // cost to upgrade autoclicker b
+let costC: number = 1000; // cost to upgrade autoclicker c
 
 const upsA: number = 0.1; // units per second
 const upsB: number = 2;
@@ -51,9 +51,9 @@ const purchasedBElement = document.getElementById("purchasedB")!;
 const purchasedCElement = document.getElementById("purchasedC")!;
 
 // associated upgrade costs
-//const costElementA = document.getElementById("upgradeCostA")!;
-//const costElementB = document.getElementById("upgradeCostB")!;
-//const costElementC = document.getElementById("upgradeCostC")!;
+const costElementA = document.getElementById("upgradeCostA")!;
+const costElementB = document.getElementById("upgradeCostB")!;
+const costElementC = document.getElementById("upgradeCostC")!;
 
 const growthElement = document.getElementById("growthRate")!;
 
@@ -64,16 +64,22 @@ buyButtonA.addEventListener("click", () => {
   buyUpgrade(costA, upsA);
   purchasedA++;
   purchasedAElement.innerHTML = `${purchasedA}`;
+  costA *= 1.15;
+  costElementA.innerHTML = costA.toFixed(0);
 });
 buyButtonB.addEventListener("click", () => {
   buyUpgrade(costB, upsB);
   purchasedB++;
   purchasedBElement.innerHTML = `${purchasedB}`;
+  costB *= 1.15;
+  costElementB.innerHTML = costB.toFixed(0);
 });
 buyButtonC.addEventListener("click", () => {
   buyUpgrade(costC, upsC);
   purchasedC++;
   purchasedCElement.innerHTML = `${purchasedC}`;
+  costC *= 1.15;
+  costElementC.innerHTML = costC.toFixed(0);
 });
 
 // FUNCTION CALLS
@@ -83,7 +89,7 @@ requestAnimationFrame(step);
 
 function click(amount: number = 1) {
   counter += amount;
-  counterElement.innerHTML = `${Math.trunc(counter)}`;
+  counterElement.innerHTML = counter.toFixed(0);
   checkUpgrade(costA, buyButtonA);
   checkUpgrade(costB, buyButtonB);
   checkUpgrade(costC, buyButtonC);
@@ -115,7 +121,6 @@ function buyUpgrade(
 ) {
   counter -= cost;
   autoClicks += unitsPerSec;
-  //costElement.innerHTML = `${upgradeCost}`;
-  counterElement.innerHTML = `${Math.trunc(counter)}`;
+  counterElement.innerHTML = counter.toFixed(0);
   growthElement.innerHTML = autoClicks.toFixed(1);
 }
