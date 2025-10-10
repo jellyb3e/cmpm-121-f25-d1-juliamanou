@@ -1,11 +1,13 @@
-.icon {
-  width: 64px;
-  vertical-align: top;
-  border: 1px solid salmon;
-}
-
 #moots {
   background-color: transparent;
   border: none;
-  font-size: 100px;
+  font-size: 150px;
+}
+
+.content-text {
+  font-size: 20px;
+}
+
+.label-text {
+  font-size: 12px;
 }
