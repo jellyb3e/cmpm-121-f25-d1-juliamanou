@@ -22,7 +22,8 @@ const availableItems: Item[] = [
     rate: 0.1,
     units: 0,
     costUnit: "moose ankles",
-    description: "state-of-the-art moose obliterator exterminates 1 moose every 10 seconds!"
+    description:
+      "state-of-the-art moose obliterator exterminates 1 moose every 10 seconds!",
   },
   {
     name: "invest in the moose meat industry",
@@ -30,7 +31,7 @@ const availableItems: Item[] = [
     rate: 2,
     units: 0,
     costUnit: "moose shoulders",
-    description: "people will really eat anything these days"
+    description: "people will really eat anything these days",
   },
   {
     name: "conduct scientific experiments on meese",
@@ -38,7 +39,7 @@ const availableItems: Item[] = [
     rate: 50,
     units: 0,
     costUnit: "moose elbows",
-    description: "they say meese are the closest relative to humans"
+    description: "they say meese are the closest relative to humans",
   },
   {
     name: "send meese to outer space",
@@ -46,7 +47,7 @@ const availableItems: Item[] = [
     rate: 100,
     units: 0,
     costUnit: "moose nostrils",
-    description: "outer space: the final moose-tier"
+    description: "outer space: the final moose-tier",
   },
   {
     name: "research moose spaghettification",
@@ -54,7 +55,7 @@ const availableItems: Item[] = [
     rate: 500,
     units: 0,
     costUnit: "moose tails",
-    description: "come get your moose spaghetti!"
+    description: "come get your moose spaghetti!",
   },
 ];
 
