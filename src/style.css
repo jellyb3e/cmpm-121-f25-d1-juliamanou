@@ -18,11 +18,11 @@ body {
 
 .main-button {
   width: 250px;
-  border-radius:6px;
+  border-radius: 6px;
 }
 
 .upgrade-button {
-  color:lightgray;
+  color: lightgray;
   background-image: url("./flannel.png");
   border-radius: 6px;
   padding: 6px 12px 6px;
