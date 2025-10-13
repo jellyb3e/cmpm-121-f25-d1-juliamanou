@@ -12,29 +12,49 @@ interface Item {
   rate: number;
   units: number;
   costUnit: string;
+  description: string;
 }
 
 const availableItems: Item[] = [
   {
-    name: "buy auto-meese-obliterator",
+    name: "buy auto-moose-obliterator",
     cost: 10,
     rate: 0.1,
     units: 0,
     costUnit: "moose ankles",
+    description: "state-of-the-art moose obliterator exterminates 1 moose every 10 seconds!"
   },
   {
-    name: "conduct scientific experiments on meese",
+    name: "invest in the moose meat industry",
     cost: 100,
     rate: 2,
     units: 0,
-    costUnit: "moose elbows",
+    costUnit: "moose shoulders",
+    description: "people will really eat anything these days"
   },
   {
-    name: "send meese to outer space",
+    name: "conduct scientific experiments on meese",
     cost: 1000,
     rate: 50,
     units: 0,
-    costUnit: "moose ears",
+    costUnit: "moose elbows",
+    description: "they say meese are the closest relative to humans"
+  },
+  {
+    name: "send meese to outer space",
+    cost: 50000,
+    rate: 100,
+    units: 0,
+    costUnit: "moose nostrils",
+    description: "outer space: the final moose-tier"
+  },
+  {
+    name: "research moose spaghettification",
+    cost: 1000000,
+    rate: 500,
+    units: 0,
+    costUnit: "moose tails",
+    description: "come get your moose spaghetti!"
   },
 ];
 
@@ -107,7 +127,7 @@ function createUpgradeButtons() {
   let htmlContent: string = "";
   availableItems.forEach((item) => {
     htmlContent +=
-      `<button id="${item.name}" class="upgrade-button" disabled>${item.name} (+${
+      `<button title="${item.description}" id="${item.name}" class="upgrade-button" disabled>${item.name} (+${
         item.rate.toFixed(1)
       } meese/sec)</button>`;
     htmlContent +=
