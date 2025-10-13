@@ -1,6 +1,17 @@
-import mooseImg from "./moose.png";
+/*
+Credits:
+Song: Mildred's Waltz - Binkley (royalty-free music) https://www.epidemicsound.com/music/tracks/a06bb301-8bc1-4628-829a-db7b27feb10d/
+Moose Image: https://yukonwildlife.ca/2020-09-misunderstood-moose/
+Moose Sound: https://averagehunter.com/wild-game-downloads/moose/
+*/
+
 import "./style.css";
+import mooseImg from "./moose.png";
 import backgroundImg from "./wood-paneling.png";
+import gameMusic from "./gameMusic.mp3";
+import mooseSound from "./mooseSound.mp3";
+
+const clickSound: HTMLAudioElement = new Audio(mooseSound);
 
 let clicks: number = 0; // click counter
 let lastTime: number = 0; // used for auto-click calculation
@@ -62,21 +73,31 @@ const availableItems: Item[] = [
 document.body.style.backgroundImage = `url(${backgroundImg})`;
 document.body.style.backgroundSize = "cover";
 document.body.innerHTML = `
+  <audio autoplay loop>
+    <source src= "${gameMusic}" type="audio/mp3">
+  </audio>
   <h1>meese explosion factory.</h1>
-  <button id="moots"><img src="${mooseImg}" class="main-button"></button>
-  <div>click moose to explode it.</div>
-  <br>
-  <div class="content-text"><span id="counter">0</span> meese blown to smithereens</div>
-  <div class="label-text">obliter-rate-ion: <span id="growthRate">0</span> meese/sec</div>
-  <br>
-` + createUpgradeButtons();
+  <div class="row">
+    <div class="column">
+      <button id="moots"><img src="${mooseImg}" class="main-button"></button>
+      <div>click moose to explode it.</div>
+      <br>
+      <div class="content-text"><span id="counter">0</span> meese blown to smithereens</div>
+      <div class="label-text">obliter-rate-ion: <span id="rate">0</span> meese/sec</div>
+    </div>
+    <div class="column">
+      ${createUpgradeButtons()}
+    </div>
+  </div>
+`;
 
 // click handler
 const button = document.getElementById("moots")!;
 const counter = document.getElementById("counter")!;
-const rate = document.getElementById("growthRate")!;
+const rate = document.getElementById("rate")!;
 
 button.addEventListener("click", () => {
+  clickSound.play();
   click();
 });
 
@@ -118,6 +139,7 @@ function checkUpgrades() {
 }
 
 function buyUpgrade(cost: number, unitsPerSec: number) {
+  clickSound.play();
   clicks -= cost;
   autoClicks += unitsPerSec;
   counter.innerHTML = clicks.toFixed(0);

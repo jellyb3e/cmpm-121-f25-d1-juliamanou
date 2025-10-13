@@ -4,3 +4,5 @@ The goal of this project is to create a simple web application using TypeScript,
 
 This is _meese explosion factory_, a clicker game where you explode moose. You can purchase upgrades
 to speed up the factory and prosper as the world's foremost moose explosion tycoon!
+
+_Asset credits can be found in main.ts. Enjoy!_
