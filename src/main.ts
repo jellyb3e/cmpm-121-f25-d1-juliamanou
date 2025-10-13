@@ -1,4 +1,6 @@
+import mooseImg from "./moose.png";
 import "./style.css";
+import backgroundImg from "./wood-paneling.png";
 
 let counter: number = 0; // click counter
 let lastTime: number = 0; // used for auto-click calculation
@@ -16,23 +18,26 @@ let purchasedA: number = 0;
 let purchasedB: number = 0;
 let purchasedC: number = 0;
 
-// auto-moose-obliterator
+document.body.style.backgroundImage = `url(${backgroundImg})`;
+document.body.style.backgroundSize = "cover";
 document.body.innerHTML = `
   <h1>meese explosion factory.</h1>
-  <button id="moots">🫎</button>
+  <button id="moots"><img src="${mooseImg}" class="main-button"></button>
+  <div>click moose to explode it.</div>
+  <br>
   <div class="content-text"><span id="counter">0</span> meese blown to smithereens</div>
   <div class="label-text">obliter-rate-ion: <span id="growthRate">0</span> meese/sec</div>
   <br>
-  <button id="buyButtonA" disabled>upgradeA (+0.1 meese/sec)</button>
-  <div class="label-text">cost: <span id="upgradeCostA">10</span> doubloons</div>
+  <button id="buyButtonA" class="upgrade-button" disabled>buy auto-meese-obliterator (+0.1 meese/sec)</button>
+  <div class="label-text">cost: <span id="upgradeCostA">10</span> moose ankles</div>
   <div class="label-text">purchased: <span id="purchasedA">0</span> units</div>
   <br>
-  <button id="buyButtonB" disabled>upgradeB (+2.0 meese/sec)</button>
-  <div class="label-text">cost: <span id="upgradeCostB">100</span> doubloons</div>
+  <button id="buyButtonB" class="upgrade-button" disabled>conduct scientific research on meese (+2.0 meese/sec)</button>
+  <div class="label-text">cost: <span id="upgradeCostB">100</span> moose elbows</div>
   <div class="label-text">purchased: <span id="purchasedB">0</span> units</div>
   <br>
-  <button id="buyButtonC" disabled>upgradeC (+50.0 meese/sec)</button>
-  <div class="label-text">cost: <span id="upgradeCostC">1000</span> doubloons</div>
+  <button id="buyButtonC" class="upgrade-button" disabled>send meese to outer space (+50.0 meese/sec)</button>
+  <div class="label-text">cost: <span id="upgradeCostC">1000</span> moose ears</div>
   <div class="label-text">purchased: <span id="purchasedB">0</span> units</div>
 `;
 

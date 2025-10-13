@@ -1,7 +1,11 @@
+body {
+  color: lightgray;
+  text-align: center;
+}
+
 #moots {
   background-color: transparent;
   border: none;
-  font-size: 150px;
 }
 
 .content-text {
@@ -10,4 +14,24 @@
 
 .label-text {
   font-size: 12px;
+}
+
+.main-button {
+  width: 250px;
+  border-radius:6px;
+}
+
+.upgrade-button {
+  color:lightgray;
+  background-image: url("./flannel.png");
+  border-radius: 6px;
+  padding: 6px 12px 6px;
+}
+
+.upgrade-button:hover {
+  opacity: 0.8;
+}
+
+.upgrade-button:disabled {
+  opacity: 0.5;
 }

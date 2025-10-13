@@ -1,3 +1,6 @@
 # CMPM 121 D1 Project
 
-This is the starting point for your CMPM 121 D1 project. The goal of this project is to create a simple web application using TypeScript, Vite, and modern web development practices. Students should make sure to remove _this_ content from their README.md file and replace it with their own project documentation.
+The goal of this project is to create a simple web application using TypeScript, Vite, and modern web development practices.
+
+This is _meese explosion factory_, a clicker game where you explode moose. You can purchase upgrades
+to speed up the factory and prosper as the world's foremost moose explosion tycoon!
