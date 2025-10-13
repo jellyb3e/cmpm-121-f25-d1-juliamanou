@@ -5,11 +5,11 @@ Moose Image: https://yukonwildlife.ca/2020-09-misunderstood-moose/
 Moose Sound: https://averagehunter.com/wild-game-downloads/moose/
 */
 
-import "./style.css";
-import mooseImg from "./moose.png";
-import backgroundImg from "./wood-paneling.png";
 import gameMusic from "./gameMusic.mp3";
+import mooseImg from "./moose.png";
 import mooseSound from "./mooseSound.mp3";
+import "./style.css";
+import backgroundImg from "./wood-paneling.png";
 
 const clickSound: HTMLAudioElement = new Audio(mooseSound);
 
