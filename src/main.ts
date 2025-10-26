@@ -6,12 +6,14 @@ Moose Sound: https://averagehunter.com/wild-game-downloads/moose/
 */
 
 import gameMusic from "./gameMusic.mp3";
-import mooseImg from "./moose.png";
-import mooseSound from "./mooseSound.mp3";
+import buttonImg from "./moose.png";
+import clickSoundImport from "./mooseSound.mp3";
 import "./style.css";
 import backgroundImg from "./wood-paneling.png";
 
-const clickSound: HTMLAudioElement = new Audio(mooseSound);
+// Game State Variables
+
+const clickSound: HTMLAudioElement = new Audio(clickSoundImport);
 
 let clicks: number = 0; // click counter
 let lastTime: number = 0; // used for auto-click calculation
@@ -70,32 +72,15 @@ const availableItems: Item[] = [
   },
 ];
 
-document.body.style.backgroundImage = `url(${backgroundImg})`;
-document.body.style.backgroundSize = "cover";
-document.body.innerHTML = `
-  <audio autoplay loop>
-    <source src= "${gameMusic}" type="audio/mp3">
-  </audio>
-  <h1>meese explosion factory.</h1>
-  <div class="row">
-    <div class="column">
-      <button id="moots"><img src="${mooseImg}" class="main-button"></button>
-      <div>click moose to explode it.</div>
-      <br>
-      <div class="content-text"><span id="counter">0</span> meese blown to smithereens</div>
-      <div class="label-text">obliter-rate-ion: <span id="rate">0</span> meese/sec</div>
-    </div>
-    <div class="column">
-      ${createUpgradeButtons()}
-    </div>
-  </div>
-`;
+// DOM Elements
+renderHtml();
 
 // click handler
 const button = document.getElementById("moots")!;
 const counter = document.getElementById("counter")!;
 const rate = document.getElementById("rate")!;
 
+// Event Listeners
 button.addEventListener("click", () => {
   clickSound.play();
   click();
@@ -125,6 +110,7 @@ function step(timestamp: number) {
   requestAnimationFrame(step);
 }
 
+// Upgrade Logic
 function checkUpgrades() {
   availableItems.forEach((item) => {
     const buyButton = document.getElementById(item.name);
@@ -179,4 +165,27 @@ function registerButtonClick() {
       });
     }
   });
+}
+
+function renderHtml() {
+  document.body.style.backgroundImage = `url(${backgroundImg})`;
+  document.body.style.backgroundSize = "cover";
+  document.body.innerHTML = `
+    <audio autoplay loop>
+      <source src= "${gameMusic}" type="audio/mp3">
+    </audio>
+    <h1>meese explosion factory.</h1>
+    <div class="row">
+      <div class="column">
+        <button id="clicker"><img src="${buttonImg}" class="main-button"></button>
+        <div>click moose to explode it.</div>
+        <br>
+        <div class="content-text"><span id="counter">0</span> meese blown to smithereens</div>
+        <div class="label-text">obliter-rate-ion: <span id="rate">0</span> meese/sec</div>
+      </div>
+      <div class="column">
+        ${createUpgradeButtons()}
+      </div>
+    </div>
+  `;
 }
