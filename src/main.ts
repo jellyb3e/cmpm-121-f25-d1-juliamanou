@@ -3,7 +3,7 @@ Credits:
 Song: Mildred's Waltz - Binkley (royalty-free music) https://www.epidemicsound.com/music/tracks/a06bb301-8bc1-4628-829a-db7b27feb10d/
 Moose Image: https://yukonwildlife.ca/2020-09-misunderstood-moose/
 Moose Sound: https://averagehunter.com/wild-game-downloads/moose/
-Title Font: 
+Title Font:
 *  Copyright © Typygrapher Mediengestaltung, 2000. All rights reserved. Logger font 1991 by D. Rakowski. Foreign characters added by Dieter Steffmann, Kreuztal
 *  https://www.1001fonts.com/logger-font.html
 Upgrade Border Inspiration: https://github.com/slashleyonline/d1/blob/main/src/style.css
