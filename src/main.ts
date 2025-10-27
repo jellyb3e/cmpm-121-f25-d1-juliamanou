@@ -76,7 +76,7 @@ const availableItems: Item[] = [
 renderHtml();
 
 // click handler
-const button = document.getElementById("moots")!;
+const button = document.getElementById("clicker")!;
 const counter = document.getElementById("counter")!;
 const rate = document.getElementById("rate")!;
 
