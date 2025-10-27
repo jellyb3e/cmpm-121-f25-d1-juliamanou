@@ -1,6 +1,20 @@
+/* custom font inspired by https://github.com/Noah2271/cmpm-121-incremental-nbilledo */
+@font-face {
+  font-family: "Logger";
+  src: url("Logger.ttf") format("opentype");
+}
+
+h1 {
+  font-family: "Logger", Georgia, serif;
+  font-size: 50px;
+  font-weight: normal;
+  color: #2b1907;
+}
+
 body {
   color: lightgray;
   text-align: center;
+  font-family: Georgia, serif;
 }
 
 .row {
@@ -32,6 +46,7 @@ body {
 
 .upgrade-button {
   color: lightgray;
+  font-family: Georgia, serif;
   background-image: url("./flannel.png");
   border-radius: 6px;
   /* border style inspired by https://github.com/slashleyonline/d1/blob/main/src/style.css */
