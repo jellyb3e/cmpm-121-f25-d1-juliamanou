@@ -3,6 +3,7 @@ Credits:
 Song: Mildred's Waltz - Binkley (royalty-free music) https://www.epidemicsound.com/music/tracks/a06bb301-8bc1-4628-829a-db7b27feb10d/
 Moose Image: https://yukonwildlife.ca/2020-09-misunderstood-moose/
 Moose Sound: https://averagehunter.com/wild-game-downloads/moose/
+Upgrade Border Inspiration: https://github.com/slashleyonline/d1/blob/main/src/style.css
 */
 
 import gameMusic from "./gameMusic.mp3";
